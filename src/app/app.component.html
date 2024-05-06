@@ -1,0 +1,28 @@
+
+
+<div class="navbar-container">
+
+  <!-- Top navbar -->
+  <mat-toolbar class="navbar" color="primary">
+    <app-nav></app-nav>
+
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+
+
+    <mat-sidenav-content class="sidenav-content">
+
+      <!-- Main content -->
+      <router-outlet></router-outlet>
+            <app-sidenav></app-sidenav>
+
+      <!-- <app-about></app-about> -->
+
+      <!-- ------------ -->
+
+      <div class="bottom-spacer"></div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>
