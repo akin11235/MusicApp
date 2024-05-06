@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class NavComponent {
   title = 'web304-a2';
   public searchString: string | undefined;
+  model: any = {};
 
   constructor(private router: Router) {}
   handleSearch() {
@@ -16,5 +17,9 @@ export class NavComponent {
       queryParams: { q: `${this.searchString}`, type: 'artist', limit: '50' },
     });
     this.searchString = '';
+  }
+
+  login() {
+    console.log(this.model);
   }
 }
