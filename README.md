@@ -1,2 +1,2 @@
-# musi-app
+# music-app
 
