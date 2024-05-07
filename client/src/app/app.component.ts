@@ -8,7 +8,8 @@
  *
  ********************************************************************************/
 
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,13 +17,24 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styles: [],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  users: any;
   title = 'web304-a2';
   public searchString: string | undefined;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private http: HttpClient) {}
+  ngOnInit(): void {
+    this.http.get('https://localhost:5001/api/users').subscribe({
+      next: (response) => (this.users = response),
+      error: (error) => console.log(error),
+      complete: () => console.log('Request has completed'),
+    });
+  }
+
   handleSearch() {
-    this.router.navigate(['search'], {queryParams: {q:`${this.searchString}`, type: 'artist', limit: '50'}});
+    this.router.navigate(['search'], {
+      queryParams: { q: `${this.searchString}`, type: 'artist', limit: '50' },
+    });
     this.searchString = '';
   }
 }
