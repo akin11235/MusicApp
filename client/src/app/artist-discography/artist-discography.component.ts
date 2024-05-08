@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MusicDataService } from '../music-data.service';
+import { MusicDataService } from '../_services/music-data.service';
 
 @Component({
   selector: 'app-artist-discography',

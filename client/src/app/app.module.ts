@@ -29,6 +29,9 @@ import { SearchResultComponent } from './search-result/search-result.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { NavComponent } from './nav/nav.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     FavouritesComponent,
     NavComponent,
     SidenavComponent,
+    HomeComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +68,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     FormsModule,
     MatSnackBarModule,
     MatSelectModule,
+    BsDropdownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

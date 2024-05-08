@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { MusicDataService } from '../music-data.service';
+import { MusicDataService } from '../_services/music-data.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -27,8 +27,6 @@ export class NewReleasesComponent implements OnInit, OnDestroy {
     this.subscription2 = this._musicDataService
       .getNewReleases()
       .subscribe((data) => (this.artistId = data.albums.items[0].id));
-
-      
 
     // this.subscription3 = this._musicDataService
     //   .getRelatedArtistById(this.artistId)

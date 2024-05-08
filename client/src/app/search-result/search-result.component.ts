@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Observable, Subscription, map } from 'rxjs';
-import { MusicDataService } from '../music-data.service';
+import { MusicDataService } from '../_services/music-data.service';
 
 @Component({
   selector: 'app-search-result',
@@ -21,21 +21,19 @@ export class SearchResultComponent implements OnInit {
   ) {
     // this.route.queryParams.subscribe((data: Params) => console.log(data));
     this.route.queryParams.subscribe(
-      (data) => (
-        (this.searchQuery = data['q']), console.log(this.searchQuery)
-      )
+      (data) => ((this.searchQuery = data['q']), console.log(this.searchQuery))
     );
   }
 
   ngOnInit(): void {
     this.subscription = this._musicDataService
       .searchArtists(this.searchQuery)
-      .subscribe(
-        (data) =>{
-          (this.results = data.artists.items.filter(
-            (item) => item.images.length > 0
-          )); console.log('search artists',this.results)}
-      );
+      .subscribe((data) => {
+        this.results = data.artists.items.filter(
+          (item) => item.images.length > 0
+        );
+        console.log('search artists', this.results);
+      });
   }
 }
 

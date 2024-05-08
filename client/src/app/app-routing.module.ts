@@ -7,29 +7,32 @@ import { AlbumComponent } from './album/album.component';
 import { ArtistDiscographyComponent } from './artist-discography/artist-discography.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { FavouritesComponent } from './favourites/favourites.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {
-    path: 'newReleases',
-    component: NewReleasesComponent,
-    title: ' New releases',
-  },
-  {
-    path: 'artist/:id',
-    component: ArtistDiscographyComponent,
-    title: 'Artists',
-  },
-  {
-    path: 'artist/:id/related-artists',
-    component: ArtistDiscographyComponent,
-    title: 'Artists',
-  },
-  { path: 'album/:id', component: AlbumComponent, title: 'Albums' },
-  { path: 'about', component: AboutComponent },
-  { path: '', redirectTo: '/newReleases', pathMatch: 'full' },
-  { path: 'search', component: SearchResultComponent, title: 'Search' },
-  { path: 'favourites', component: FavouritesComponent, title: 'Favourites' },
-  { path: '**', component: NotFoundComponent },
+  { path: '', component: HomeComponent },
+  // {
+  //   path: 'newReleases',
+  //   component: NewReleasesComponent,
+  //   title: ' New releases',
+  // },
+  // {
+  //   path: 'artist/:id',
+  //   component: ArtistDiscographyComponent,
+  //   title: 'Artists',
+  // },
+  // {
+  //   path: 'artist/:id/related-artists',
+  //   component: ArtistDiscographyComponent,
+  //   title: 'Artists',
+  // },
+  // { path: 'album/:id', component: AlbumComponent, title: 'Albums' },
+  // { path: 'about', component: AboutComponent },
+
+  // { path: '', redirectTo: '/newReleases', pathMatch: 'full' },
+  // { path: 'search', component: SearchResultComponent, title: 'Search' },
+  // { path: 'favourites', component: FavouritesComponent, title: 'Favourites' },
+  // { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

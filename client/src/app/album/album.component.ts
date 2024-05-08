@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params } from '@angular/router';
-import { MusicDataService } from '../music-data.service';
+import { MusicDataService } from '../_services/music-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, Subscription, map } from 'rxjs';
 
@@ -45,7 +45,7 @@ export class AlbumComponent implements OnInit {
       this._matSnackBar.open('Adding to Favourites...', 'Done', {
         duration: 1500,
       });
-      console.log('Track ID', trackID)
+      console.log('Track ID', trackID);
     }
   }
 

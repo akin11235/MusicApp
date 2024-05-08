@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MusicDataService } from '../music-data.service';
+import { MusicDataService } from '../_services/music-data.service';
 import { Observable, Subscription } from 'rxjs';
 
 @Component({
